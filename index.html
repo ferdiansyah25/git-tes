@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kegabutan</title>
+</head>
+<body style="text-align: center; background-color: burlywood;" >
+    <h1>KAMU NANYA</h1>
+    <img src="img/1.png" height="250" width="250" id="img-kamunanya">
+    <p id="cliks">KAMU TELAH NANYA : 0</p>
+    <button onclick="plus()" style="height:50px; background-color: darkgoldenrod;">BANG HP LU APAAN</button>
+    <button onclick="minus()" style="height:50px; background-color: darkgoldenrod;">Maaf Bang</button>
+    <p>
+        Jangan di <a href="index2.html" style="text-decoration: none;"> Pencet </a> sumpah
+    </p>
+    <footer>
+        <p>copyright nvlferdiansyah</p>
+    </footer>
+</body>
+<script>
+    let cliks = 0 ;
+    function plus()
+    {
+        const audio = new Audio("img/kamu nanya.mp3")
+        audio.play()
+        cliks++
+        document.getElementById("cliks").innerHTML =  "kamu telah nanya : " + cliks
+        document.getElementById("img-kamunanya").src = "img/2.png"
+        audio.addEventListener("ended",function(){
+            document.getElementById("img-kamunanya").src = "img/1.png"
+        })
+    }
+    function minus()
+    {
+        const audio = new Audio("img/nt kadangw nt.mp3")
+        audio.play()
+        cliks--
+        document.getElementById("cliks").innerHTML =  "kamu telah nanya : " + cliks
+        document.getElementById("img-kamunanya").src = "img/2.png"
+        audio.addEventListener("ended",function(){
+            document.getElementById("img-kamunanya").src = "img/1.png"
+        })
+    }
+</script>
+</html>
